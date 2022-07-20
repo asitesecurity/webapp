@@ -41,7 +41,7 @@ stage ('Deploy-To-Tomcat') {
             // sh 'sshpass -p "toor" scp -o StrictHostKeyChecking=no target/*.war root@192.168.100.131:/opt/tomcat/apache-tomcat-8.5.81/webapps/webapp.war'
             // sh 'cp target/*.war /opt/tomcat/apache-tomcat-8.5.81/webapps/'
              
-             sh 'sshpass -p "kali" ssh kali@192.168.100.131 "ls"'
+             sh 'sshpass -p "kali" ssh kali@192.168.100.131 "pwd"'
               }      
            }       
     } 
