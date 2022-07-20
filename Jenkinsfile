@@ -14,7 +14,7 @@ pipeline {
     }
     
     
-    stage ('Source Composition Analysis') {
+   /* stage ('Source Composition Analysis') {
       steps {
          sh 'rm owasp* || true'
          sh 'wget "https://raw.githubusercontent.com/asitesecurity/webapp/master/owasp-dependency-check.sh" '
@@ -24,6 +24,8 @@ pipeline {
         
       }
     }
+    
+    */
     
     stage ('Build') {
       steps {
@@ -38,6 +40,8 @@ stage ('Deploy-To-Tomcat') {
                 sh 'sshpass -p "kali" scp -o StrictHostKeyChecking=no target/*.war kali@192.168.100.131:/opt/tomcat/apache-tomcat-8.5.81/webapps/webapp.war'
             // sh 'sshpass -p "toor" scp -o StrictHostKeyChecking=no target/*.war root@192.168.100.131:/opt/tomcat/apache-tomcat-8.5.81/webapps/webapp.war'
             // sh 'cp target/*.war /opt/tomcat/apache-tomcat-8.5.81/webapps/'
+             
+             sh 'sshpass -p "kali" ssh mkdir kali@192.168.100.131:/opt/tomcat/apache-tomcat-8.5.81/webapps/test123.txt'
               }      
            }       
     } 
