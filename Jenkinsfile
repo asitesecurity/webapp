@@ -14,18 +14,19 @@ pipeline {
     }
     
     
-   /* stage ('Source Composition Analysis') {
+   stage ('Source Composition Analysis') {
       steps {
-         sh 'rm owasp* || true'
+        /* sh 'rm owasp* || true'
          sh 'wget "https://raw.githubusercontent.com/asitesecurity/webapp/master/owasp-dependency-check.sh" '
          sh 'chmod +x owasp-dependency-check.sh'
          sh 'bash owasp-dependency-check.sh'
-         sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
+         sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml' */
+        sh 'sshpass -p "kali" ssh kali@192.168.100.131 "pwd"'
         
       }
     }
     
-    */
+    
     
     stage ('Build') {
       steps {
@@ -41,7 +42,7 @@ stage ('Deploy-To-Tomcat') {
             // sh 'sshpass -p "toor" scp -o StrictHostKeyChecking=no target/*.war root@192.168.100.131:/opt/tomcat/apache-tomcat-8.5.81/webapps/webapp.war'
             // sh 'cp target/*.war /opt/tomcat/apache-tomcat-8.5.81/webapps/'
              
-             sh 'sshpass -p "kali" ssh kali@192.168.100.131 "pwd"'
+            // sh 'sshpass -p "kali" ssh kali@192.168.100.131 "pwd"'
               }      
            }       
     } 
