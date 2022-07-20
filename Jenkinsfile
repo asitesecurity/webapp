@@ -16,8 +16,9 @@ pipeline {
     
    stage ('Source Composition Analysis') {
       steps {
-         sh 'sshpass -p "kali" ssh kali@192.168.100.131 "rm owasp* || true"'
-         sh 'sshpass -p "kali" ssh kali@192.168.100.131 "wget https://raw.githubusercontent.com/asitesecurity/webapp/master/owasp-dependency-check.sh" '
+         sh 'sshpass -p "toor" ssh root@192.168.100.131 "rm owasp* || true"'
+         sh 'sshpass -p "toor" ssh root@192.168.100.131 "wget https://raw.githubusercontent.com/asitesecurity/webapp/master/owasp-dependency-check.sh" '
+         sh 'sshpass -p "toor" ssh root@192.168.100.131 "pwd"'
          sh 'sshpass -p "kali" ssh kali@192.168.100.131 "chmod +x owasp-dependency-check.sh" '
          sh 'sshpass -p "kali" ssh kali@192.168.100.131 "bash owasp-dependency-check.sh" '
          sh 'sshpass -p "kali" ssh kali@192.168.100.131 "cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml" ' 
