@@ -13,7 +13,7 @@ pipeline {
       }
     }
     
-    
+   /* 
    stage ('Source Composition Analysis') {
       steps {
          sh 'sshpass -p "kali" ssh kali@192.168.100.131 "rm owasp* || true"'
@@ -27,7 +27,7 @@ pipeline {
       }
     }
     
-    
+    */
     
     stage ('Build') {
       steps {
