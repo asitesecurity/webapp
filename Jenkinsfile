@@ -20,7 +20,7 @@ pipeline {
         sh 'wget https://raw.githubusercontent.com/asitesecurity/webapp/master/owasp-dependency-check.sh'
          sh 'chmod +x owasp-dependency-check.sh '
         sh 'pwd'
-         sh 'bash owasp-dependency-check.sh'
+         sh 'sudo bash owasp-dependency-check.sh'
      //    sh 'sshpass -p "kali" ssh kali@192.168.100.131 "cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml" ' 
         sh 'pwd'
         
