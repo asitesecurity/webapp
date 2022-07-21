@@ -40,8 +40,8 @@ stage ('Deploy-To-Tomcat') {
             steps {
            sshagent(['tomcat']) {
              sh 'pwd'
-             sh 'mkdir test.txt'
-             sh 'echo "3202de9273fe4362af50e3fdcf486ff8" | sudo -S -k cp target/*.war /opt/tomcat/apache-tomcat-8.5.81/webapps/webapp.war'
+               sh 'cp target/*.war /opt/tomcat/apache-tomcat-8.5.81/webapps/webapp.war'
+             //      sh 'echo "3202de9273fe4362af50e3fdcf486ff8" | sudo -S -k cp target/*.war /opt/tomcat/apache-tomcat-8.5.81/webapps/webapp.war'
             //    sh 'sshpass -p "kali" scp -o StrictHostKeyChecking=no target/*.war kali@192.168.100.131:/opt/tomcat/apache-tomcat-8.5.81/webapps/webapp.war'
             // sh 'sshpass -p "toor" scp -o StrictHostKeyChecking=no target/*.war root@192.168.100.131:/opt/tomcat/apache-tomcat-8.5.81/webapps/webapp.war'
             // sh 'cp target/*.war /opt/tomcat/apache-tomcat-8.5.81/webapps/'
