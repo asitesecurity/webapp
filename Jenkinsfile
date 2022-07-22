@@ -23,7 +23,8 @@ pipeline {
          sh 'chmod +x owasp-dependency-check.sh '
         sh 'pwd'
         sh 'whoami'
-         sh 'echo "jenkins" | sudo -S -k bash owasp-dependency-check.sh'
+         sh 'bash owasp-dependency-check.sh'
+       //  sh 'echo "jenkins" | sudo -S -k bash owasp-dependency-check.sh'
         sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml' 
         sh 'pwd'
         
