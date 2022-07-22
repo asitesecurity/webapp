@@ -38,8 +38,8 @@ pipeline {
             }
           }
 
-/*
- stage ('Deploy-To-Tomcat') {
+
+    stage ('Deploy-To-Tomcat') {
             steps {
            sshagent(['tomcat']) {
              sh 'pwd'
@@ -52,7 +52,7 @@ pipeline {
             // sh 'sshpass -p "kali" ssh kali@192.168.100.131 "pwd"'
               }      
            }       
-    }  */
+    }  
 }
 
 }
