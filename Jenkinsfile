@@ -24,7 +24,7 @@ pipeline {
         sh 'pwd'
         sh 'whoami'
          sh 'echo "jenkins" | sudo -S -k bash owasp-dependency-check.sh'
-     //    sh 'sshpass -p "kali" ssh kali@192.168.100.131 "cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml" ' 
+        sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml' 
         sh 'pwd'
         
       }
